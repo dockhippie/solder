@@ -1,0 +1,31 @@
+#!/bin/bash
+
+for DIR in cache debugbar github-api-cache logs meta resources sessions views
+do
+  if [ ! -d /storage/${DIR} ]
+  then
+    mkdir -p \
+      /storage/${DIR}
+  fi
+
+  rm -rf \
+    /srv/www/app/storage/${DIR}
+
+  ln -sf \
+    /storage/${DIR} \
+    /srv/www/app/storage/${DIR}
+done
+
+if [ ! -d /storage/resources/default ]
+then
+  cp -rf \
+    /srv/www/public/resources/* \
+    /storage/resources/
+fi
+
+rm -rf \
+  /srv/www/public/resources
+
+ln -sf \
+  /storage/resources \
+  /srv/www/public/resources
