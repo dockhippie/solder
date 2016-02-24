@@ -1,6 +1,6 @@
 # Solder
 
-[![](https://badge.imagelayers.io/webhippie/solder:latest.svg)](https://imagelayers.io/?images=webhippie/solder:latest 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/webhippie/solder:0.7.2.svg)](https://imagelayers.io/?images=webhippie/solder:0.7.2 'Get your own badge on imagelayers.io')
 
 These are docker images for Technic Solder with Caddy running on an
 [PHP container](https://registry.hub.docker.com/u/webhippie/php-caddy/).
@@ -11,7 +11,7 @@ These are docker images for Technic Solder with Caddy running on an
 ```bash
 docker run -ti \
   --name solder \
-  webhippie/solder:latest
+  webhippie/solder:0.7.2
 ```
 
 
