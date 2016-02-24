@@ -45,7 +45,7 @@ declare -x SOLDER_DB_TYPE
 [[ -z "${SOLDER_MAIL_SENDMAIL}" ]] && SOLDER_MAIL_SENDMAIL="/usr/sbin/sendmail -bs"
 [[ -z "${SOLDER_USE_S3}" ]] && SOLDER_USE_S3="false"
 [[ -z "${SOLDER_S3_BUCKET}" ]] && SOLDER_S3_BUCKET="solder"
-[[ -z "${SOLDER_DB_TYPE}" ]] && SOLDER_DB_TYPE="sqlite"
+[[ -z "${SOLDER_DB_TYPE}" ]] && SOLDER_DB_TYPE="mysql"
 
 case "${SOLDER_DB_TYPE}" in
   "sqlite")

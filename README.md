@@ -53,9 +53,9 @@ ENV SOLDER_USE_S3 false
 ENV SOLDER_S3_ACCESS_KEY
 ENV SOLDER_S3_SECRET_KEY
 ENV SOLDER_S3_BUCKET solder
-ENV SOLDER_DB_TYPE sqlite # can also be mysql or pgsql
-ENV SOLDER_DB_HOST # mysql for mysql and postgres for pgsql
-ENV SOLDER_DB_DATABASE /storage/database.sqlite3
+ENV SOLDER_DB_TYPE mysql # can also be sqlite or pgsql
+ENV SOLDER_DB_HOST mysql # postgres for pgsql
+ENV SOLDER_DB_DATABASE solder # /storage/database.sqlite3 for sqlite
 ENV SOLDER_DB_USERNAME root
 ENV SOLDER_DB_PASSWORD root
 ENV SOLDER_DB_PREFIX
