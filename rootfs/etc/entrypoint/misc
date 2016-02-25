@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for DIR in cache debugbar github-api-cache logs meta resources sessions views
+for DIR in github-api-cache logs meta resources
 do
   if [ ! -d /storage/${DIR} ]
   then

@@ -69,7 +69,7 @@ case "${SOLDER_DB_TYPE}" in
     [[ -z "${SOLDER_DB_USERNAME}" ]] && SOLDER_DB_USERNAME="root"
     [[ -z "${SOLDER_DB_PASSWORD}" ]] && SOLDER_DB_PASSWORD="root"
     [[ -z "${SOLDER_DB_CHARSET}" ]] && SOLDER_DB_CHARSET="utf8"
-    [[ -z "${SOLDER_DB_COLLATION}" ]] && SOLDER_DB_COLLATION="utf8_unicode_ci"
+    [[ -z "${SOLDER_DB_COLLATION}" ]] && SOLDER_DB_COLLATION="utf8_general_ci"
     ;;
 
   "pgsql")
