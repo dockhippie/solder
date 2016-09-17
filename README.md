@@ -11,6 +11,9 @@ These are docker images for [Technic Solder](https://github.com/TechnicPack/Tech
 * [latest](https://github.com/dockhippie/solder/tree/master)
   available as ```webhippie/solder:latest``` at
   [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
+* [0.7.3](https://github.com/dockhippie/solder/tree/0.7.3)
+  available as ```webhippie/solder:0.7.3``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
 * [0.7.2](https://github.com/dockhippie/solder/tree/0.7.2)
   available as ```webhippie/solder:0.7.2``` at
   [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
