@@ -13,7 +13,7 @@ ENV SOLDER_TARBALL https://github.com/TechnicPack/TechnicSolder/archive/v${SOLDE
 
 RUN apk update && \
   apk add \
-    php-apcu \
+    php5-apcu \
     sqlite && \
   rm -rf \
     /var/cache/apk/*
