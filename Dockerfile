@@ -3,7 +3,6 @@ MAINTAINER Thomas Boerger <thomas@webhippie.de>
 
 VOLUME ["/storage", "/srv/www/vendor"]
 
-ENTRYPOINT ["/usr/bin/entrypoint"]
 CMD ["/bin/s6-svscan", "/etc/s6"]
 EXPOSE 8080
 WORKDIR /srv/www
