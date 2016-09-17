@@ -2,17 +2,8 @@
 
 [![](https://badge.imagelayers.io/webhippie/solder:latest.svg)](https://imagelayers.io/?images=webhippie/solder:latest 'Get your own badge on imagelayers.io')
 
-These are docker images for Technic Solder with Caddy running on an
-[PHP container](https://registry.hub.docker.com/u/webhippie/php-caddy/).
-
-
-## Usage
-
-```bash
-docker run -ti \
-  --name solder \
-  webhippie/solder:latest
-```
+These are docker images for [Technic Solder](https://github.com/TechnicPack/TechnicSolder) running on an
+[PHP Caddy container](https://registry.hub.docker.com/u/webhippie/php-caddy/).
 
 
 ## Versions
@@ -23,6 +14,17 @@ docker run -ti \
 * [0.7.2](https://github.com/dockhippie/solder/tree/0.7.2)
   available as ```webhippie/solder:0.7.2``` at
   [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
+
+
+## Volumes
+
+* /storage
+* /srv/www/vendor
+
+
+## Ports
+
+* 8080
 
 
 ## Available environment variables
@@ -106,5 +108,5 @@ MIT
 ## Copyright
 
 ```
-Copyright (c) 2015 Thomas Boerger <http://www.webhippie.de>
+Copyright (c) 2015-2016 Thomas Boerger <http://www.webhippie.de>
 ```
