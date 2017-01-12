@@ -1,33 +1,29 @@
 # Solder
 
-[![](https://badge.imagelayers.io/webhippie/solder-apache:latest.svg)](https://imagelayers.io/?images=webhippie/solder-apache:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/webhippie/solder.svg)](https://microbadger.com/images/webhippie/solder "Get your own image badge on microbadger.com")
 
-These are docker images for [TechnicSolder](https://github.com/TechnicPack/TechnicSolder) with Apache running on an
-[PHP container](https://registry.hub.docker.com/u/webhippie/php-apache/).
-
-
-## Usage
-
-```bash
-docker run -ti \
-  --name solder-apache \
-  webhippie/solder-apache:latest
-```
+These are docker images for [TechnicSolder](https://github.com/TechnicPack/TechnicSolder) with Apache running on a [PHP container](https://registry.hub.docker.com/u/webhippie/php-apache/).
 
 
 ## Versions
 
-* [latest](https://github.com/dockhippie/solder/tree/master)
-  available as ```webhippie/solder-apache:latest``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder-apache/)
-* [0.7.2.2](https://github.com/dockhippie/solder/tree/master)
-  available as ```webhippie/solder-apache:0.7.2.2``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder-apache/)
+* [latest](https://github.com/dockhippie/solder/tree/master) available as ```webhippie/solder:latest``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
+* [0.7.2.2](https://github.com/dockhippie/solder/tree/master) available as ```webhippie/solder:0.7.2.2``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
+
+
+## Volumes
+
+* /app/storage
+
+
+## Ports
+
+* 8080
+
 
 ## Available environment variables
 
 ```bash
-ENV SOLDER_
 ```
 
 
@@ -43,14 +39,12 @@ ENV PHP_DATE_TIMEZONE UTC
 ```
 
 ```bash
-ENV LOGSTASH_ENABLED false
-ENV LOGSTASH_HOST logstash
-ENV LOGSTASH_PORT 5043
-ENV LOGSTASH_CA /etc/ssl/logstash/certs/ca.pem # As string or filename
-ENV LOGSTASH_CERT /etc/ssl/logstash/certs/cert.pem # As string or filename
-ENV LOGSTASH_KEY /etc/ssl/logstash/private/cert.pem # As string or filename
-ENV LOGSTASH_TIMEOUT 15
-ENV LOGSTASH_OPTS
+ENV APACHE_HOSTNAME $HOSTNAME
+ENV APACHE_WEBROOT /srv/www
+```
+
+```bash
+ENV CRON_ENABLED false
 ```
 
 
@@ -72,5 +66,5 @@ MIT
 ## Copyright
 
 ```
-Copyright (c) 2015 Thomas Boerger <http://www.webhippie.de>
+Copyright (c) 2015-2017 Thomas Boerger <http://www.webhippie.de>
 ```
