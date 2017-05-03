@@ -87,7 +87,7 @@ case "${SOLDER_DB_TYPE}" in
 
     if [ ! -f "${SOLDER_DB_DATABASE}" ]
     then
-      /usr/bin/gosu \
+      su-exec \
         caddy \
         /usr/bin/sqlite3 \
         ${SOLDER_DB_DATABASE} \
@@ -241,25 +241,25 @@ chown -R caddy:caddy \
   /storage
 
 pushd /srv/www > /dev/null
-  /usr/bin/gosu \
+  su-exec \
     caddy \
     /usr/bin/php \
     artisan \
     clear-compiled -n -q
 
-  /usr/bin/gosu \
+  su-exec \
     caddy \
     /usr/bin/php \
     artisan \
     optimize -n -q
 
-  /usr/bin/gosu \
+  su-exec \
     caddy \
     /usr/bin/php \
     artisan \
     migrate:install -n -q
 
-  /usr/bin/gosu \
+  su-exec \
     caddy \
     /usr/bin/php \
     artisan \
