@@ -1,22 +1,15 @@
 # Solder
 
-[![](https://badge.imagelayers.io/webhippie/solder:latest.svg)](https://imagelayers.io/?images=webhippie/solder:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/webhippie/solder.svg)](https://microbadger.com/images/webhippie/solder "Get your own image badge on microbadger.com")
 
-These are docker images for [Technic Solder](https://github.com/TechnicPack/TechnicSolder) running on an
-[PHP Caddy container](https://registry.hub.docker.com/u/webhippie/php-caddy/).
+These are docker images for [Technic Solder](https://github.com/TechnicPack/TechnicSolder) running on an [PHP Caddy container](https://registry.hub.docker.com/u/webhippie/php-caddy/).
 
 
 ## Versions
 
-* [latest](https://github.com/dockhippie/solder/tree/master)
-  available as ```webhippie/solder:latest``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
-* [0.7.3](https://github.com/dockhippie/solder/tree/0.7.3)
-  available as ```webhippie/solder:0.7.3``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
-* [0.7.2](https://github.com/dockhippie/solder/tree/0.7.2)
-  available as ```webhippie/solder:0.7.2``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
+* [latest](https://github.com/dockhippie/solder/tree/master) available as ```webhippie/solder:latest``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
+* [0.7.3](https://github.com/dockhippie/solder/tree/0.7.3) available as ```webhippie/solder:0.7.3``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
+* [0.7.2](https://github.com/dockhippie/solder/tree/0.7.2) available as ```webhippie/solder:0.7.2``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/solder/)
 
 
 ## Volumes
@@ -82,14 +75,19 @@ ENV PHP_DATE_TIMEZONE UTC
 ```
 
 ```bash
-ENV LOGSTASH_ENABLED false
-ENV LOGSTASH_HOST logstash
-ENV LOGSTASH_PORT 5043
-ENV LOGSTASH_CA /etc/ssl/logstash/certs/ca.pem # As string or filename
-ENV LOGSTASH_CERT /etc/ssl/logstash/certs/cert.pem # As string or filename
-ENV LOGSTASH_KEY /etc/ssl/logstash/private/cert.pem # As string or filename
-ENV LOGSTASH_TIMEOUT 15
-ENV LOGSTASH_OPTS
+ENV CADDY_AGREE false
+ENV CADDY_CA https://acme-v01.api.letsencrypt.org/directory
+ENV CADDY_CA_TIMEOUT 10s
+ENV CADDY_CPU 100%
+ENV CADDY_EMAIL
+ENV CADDY_GRACE 5s
+ENV CADDY_HTTP2 true
+ENV CADDY_QUIET false
+ENV CADDY_WEBROOT /srv/www
+```
+
+```bash
+ENV CRON_ENABLED false
 ```
 
 
@@ -111,5 +109,5 @@ MIT
 ## Copyright
 
 ```
-Copyright (c) 2015-2016 Thomas Boerger <http://www.webhippie.de>
+Copyright (c) 2015-2017 Thomas Boerger <http://www.webhippie.de>
 ```
