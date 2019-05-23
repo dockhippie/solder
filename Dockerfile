@@ -12,7 +12,6 @@ ENV SOLDER_TARBALL https://github.com/TechnicPack/TechnicSolder/archive/v${SOLDE
 
 RUN apk update && \
   apk add \
-    mcrypt \
     php7-apcu \
     php7-mcrypt \
     sqlite && \
