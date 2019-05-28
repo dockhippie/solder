@@ -22,7 +22,6 @@ ENV PHP_COMPOSER_INSTALL false
 ENV SOLDER_VERSION 0.7.4.2
 ENV SOLDER_TARBALL https://github.com/TechnicPack/TechnicSolder/archive/v${SOLDER_VERSION}.tar.gz
 
-RUN curl -sLo - ${SOLDER_TARBALL} | tar -xzf - --strip 1 -C /srv/www && \
-  chown -R caddy:caddy /srv/www
-
+RUN curl -sLo - ${SOLDER_TARBALL} | tar -xzf - --strip 1 -C /srv/www
 COPY ./overlay ./overlay-amd64 /
+RUN chown -R caddy:caddy /srv/www
