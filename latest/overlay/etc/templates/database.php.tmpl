@@ -1,0 +1,45 @@
+<?php
+return array(
+  'fetch' => PDO::FETCH_CLASS,
+
+  'default' => '{{ getenv "SOLDER_DB_TYPE" }}',
+
+  'connections' => array(
+    'sqlite' => array(
+      'driver'   => 'sqlite',
+      'database' => '{{ getenv "SOLDER_DB_DATABASE" }}',
+      'prefix'   => '{{ getenv "SOLDER_DB_PREFIX" }}',
+    ),
+    'mysql' => array(
+      'driver'    => 'mysql',
+      'host'      => '{{ getenv "SOLDER_DB_HOST" }}',
+      'database'  => '{{ getenv "SOLDER_DB_DATABASE" }}',
+      'username'  => '{{ getenv "SOLDER_DB_USERNAME" }}',
+      'password'  => '{{ getenv "SOLDER_DB_PASSWORD" }}',
+      'prefix'    => '{{ getenv "SOLDER_DB_PREFIX" }}',
+      'charset'   => '{{ getenv "SOLDER_DB_CHARSET" }}',
+      'collation' => '{{ getenv "SOLDER_DB_COLLATION" }}',
+    ),
+    'pgsql' => array(
+      'driver'   => 'pgsql',
+      'host'     => '{{ getenv "SOLDER_DB_HOST" }}',
+      'database' => '{{ getenv "SOLDER_DB_DATABASE" }}',
+      'username' => '{{ getenv "SOLDER_DB_USERNAME" }}',
+      'password' => '{{ getenv "SOLDER_DB_PASSWORD" }}',
+      'prefix'   => '{{ getenv "SOLDER_DB_PREFIX" }}',
+      'charset'  => '{{ getenv "SOLDER_DB_CHARSET" }}',
+      'schema'   => '{{ getenv "SOLDER_DB_SCHEMA" }}',
+    ),
+  ),
+
+  'migrations' => 'migrations',
+
+  'redis' => array(
+    'cluster' => {{ getenv "SOLDER_REDIS_CLUSTER" }},
+    'default' => array(
+      'host'     => '{{ getenv "SOLDER_REDIS_HOST" }}',
+      'port'     => {{ getenv "SOLDER_REDIS_PORT" }},
+      'database' => {{ getenv "SOLDER_REDIS_DATABASE" }},
+    ),
+  ),
+);

@@ -1,0 +1,17 @@
+<?php
+return array(
+  'driver' => '{{ getenv "SOLDER_MAIL_DRIVER" }}',
+
+  'host' => '{{ getenv "SOLDER_MAIL_HOST" }}',
+  'port' => {{ getenv "SOLDER_MAIL_PORT" }},
+  'from' => array(
+    'address' => '{{ getenv "SOLDER_MAIL_ADDRESS" }}',
+    'name' => '{{ getenv "SOLDER_MAIL_NAME" }}',
+  ),
+  'encryption' => '{{ getenv "SOLDER_MAIL_ENCRYPTION" }}',
+  'username' => '{{ getenv "SOLDER_MAIL_USERNAME" }}',
+  'password' => '{{ getenv "SOLDER_MAIL_PASSWORD" }}',
+
+  'sendmail' => '{{ getenv "SOLDER_MAIL_SENDMAIL" }}',
+  'pretend' => false,
+);

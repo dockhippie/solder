@@ -1,0 +1,12 @@
+<?php
+return array(
+  'repo_location' => '{{ getenv "SOLDER_REPO_LOCATION" }}',
+  'mirror_url' => '{{ getenv "SOLDER_MIRROR_URL" }}',
+
+  'md5filetimeout' => 30,
+
+  'use_s3' => {{ getenv "SOLDER_USE_S3" }},
+  'access_key' => '{{ getenv "SOLDER_S3_ACCESS_KEY" }}',
+  'secret_key' => '{{ getenv "SOLDER_S3_SECRET_KEY" }}',
+  'bucket' => '{{ getenv "SOLDER_S3_BUCKET" }}',
+);
