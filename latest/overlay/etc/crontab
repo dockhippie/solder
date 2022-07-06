@@ -1,0 +1,1 @@
+0 8 * * * /usr/bin/php -f /srv/www/artisan auth:clear-resets >/dev/null 2>&1
