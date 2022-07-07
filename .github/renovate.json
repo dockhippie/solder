@@ -38,5 +38,6 @@
                 "TechnicPack/TechnicSolder"
             ]
         }
-    ]
+    ],
+    "baseBranches": ["master"]
 }
