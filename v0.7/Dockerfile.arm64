@@ -14,7 +14,7 @@ RUN apk update && \
 ENV PHP_COMPOSER_INSTALL=false
 
 # renovate: datasource=github-releases depName=TechnicPack/TechnicSolder
-ENV SOLDER_VERSION=0.7.13
+ENV SOLDER_VERSION=0.7.14
 
 # renovate: datasource=github-releases depName=aptible/supercronic
 ENV SUPERCRONIC_VERSION=0.2.1
