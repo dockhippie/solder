@@ -14,17 +14,17 @@ RUN apk update && \
 ENV PHP_COMPOSER_INSTALL=false
 
 # renovate: datasource=github-releases depName=TechnicPack/TechnicSolder
-ENV SOLDER_VERSION=v0.7.13
+ENV SOLDER_VERSION=0.7.13
 
 # renovate: datasource=github-releases depName=aptible/supercronic
-ENV SUPERCRONIC_VERSION=v0.2.1
+ENV SUPERCRONIC_VERSION=0.2.1
 
-RUN curl -sSLo - https://github.com/TechnicPack/TechnicSolder/archive/refs/tags/${SOLDER_VERSION}.tar.gz | tar -xzf - --strip 1 -C /srv/www && \
+RUN curl -sSLo - https://github.com/TechnicPack/TechnicSolder/archive/refs/tags/v${SOLDER_VERSION}.tar.gz | tar -xzf - --strip 1 -C /srv/www && \
   cd /srv/www && \
   rm -f /srv/www/.env* && \
   composer install --no-dev --no-interaction && \
   chown -R apache:apache /srv/www && \
-  curl -sSLo /usr/bin/supercronic https://github.com/aptible/supercronic/releases/download/${SUPERCRONIC_VERSION}/supercronic-linux-arm64 && \
+  curl -sSLo /usr/bin/supercronic https://github.com/aptible/supercronic/releases/download/v${SUPERCRONIC_VERSION}/supercronic-linux-arm64 && \
   chmod +x /usr/bin/supercronic
 
 COPY ./overlay /
