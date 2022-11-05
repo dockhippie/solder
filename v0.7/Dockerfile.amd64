@@ -8,7 +8,7 @@ CMD ["/usr/bin/container"]
 
 RUN apk update && \
   apk upgrade && \
-  apk add php8-bcmath sqlite && \
+  apk add php8-bcmath@testing sqlite && \
   rm -rf /var/cache/apk/*
 
 ENV PHP_COMPOSER_INSTALL=false
