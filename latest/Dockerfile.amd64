@@ -1,4 +1,4 @@
-FROM webhippie/php-apache:8-amd64@sha256:6e36e06f351c12f596a8c68336ed9c24ce64755b6a721a37bb6d5af3b8013fb9
+FROM webhippie/php-apache:8-amd64@sha256:0c4af8a7606915269294e510bbd4b9450766205e5b308644d42885b595dc9285
 
 VOLUME ["/var/lib/solder"]
 EXPOSE 8080
