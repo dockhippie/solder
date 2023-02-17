@@ -22,6 +22,7 @@ ENV SUPERCRONIC_VERSION=0.2.1
 RUN curl -sSLo - https://github.com/TechnicPack/TechnicSolder/archive/refs/tags/v${SOLDER_VERSION}.tar.gz | tar -xzf - --strip 1 -C /srv/www && \
   cd /srv/www && \
   rm -f /srv/www/.env* && \
+  composer config --no-plugins allow-plugins.php-http/discovery true && \
   composer install --no-dev --no-interaction && \
   chown -R apache:apache /srv/www && \
   curl -sSLo /usr/bin/supercronic https://github.com/aptible/supercronic/releases/download/v${SUPERCRONIC_VERSION}/supercronic-linux-arm && \
