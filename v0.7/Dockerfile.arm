@@ -1,4 +1,4 @@
-FROM webhippie/php-apache:8-arm@sha256:596a6f0c6cbd587d6ded058c8df8bc0f93fdb354f3c73eca2e32c6fcdbe4c1b3
+FROM webhippie/php-apache:8-arm@sha256:c30e180228c4e5a0253ae43ed947311d7fbced9aaa3d7b7bc64214caf4e2d176
 
 VOLUME ["/var/lib/solder"]
 EXPOSE 8080
@@ -22,6 +22,7 @@ ENV SUPERCRONIC_VERSION=0.2.1
 RUN curl -sSLo - https://github.com/TechnicPack/TechnicSolder/archive/refs/tags/v${SOLDER_VERSION}.tar.gz | tar -xzf - --strip 1 -C /srv/www && \
   cd /srv/www && \
   rm -f /srv/www/.env* && \
+  composer config --no-plugins allow-plugins.php-http/discovery true && \
   composer install --no-dev --no-interaction && \
   chown -R apache:apache /srv/www && \
   curl -sSLo /usr/bin/supercronic https://github.com/aptible/supercronic/releases/download/v${SUPERCRONIC_VERSION}/supercronic-linux-arm && \
