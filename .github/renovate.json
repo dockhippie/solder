@@ -44,5 +44,8 @@
                 "TechnicPack/TechnicSolder"
             ]
         }
+    ],
+    "ignoreDeps": [
+        "docker/build-push-action"
     ]
 }
