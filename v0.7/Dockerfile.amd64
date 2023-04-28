@@ -14,10 +14,10 @@ RUN apk update && \
 ENV PHP_COMPOSER_INSTALL=false
 
 # renovate: datasource=github-releases depName=TechnicPack/TechnicSolder
-ENV SOLDER_VERSION=0.7.14
+ENV SOLDER_VERSION=0.7.15
 
 # renovate: datasource=github-releases depName=aptible/supercronic
-ENV SUPERCRONIC_VERSION=0.2.23
+ENV SUPERCRONIC_VERSION=0.2.24
 
 RUN curl -sSLo - https://github.com/TechnicPack/TechnicSolder/archive/refs/tags/v${SOLDER_VERSION}.tar.gz | tar -xzf - --strip 1 -C /srv/www && \
   cd /srv/www && \
