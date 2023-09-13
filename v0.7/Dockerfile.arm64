@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/php-apache:8.2-arm64@sha256:ded0f5426c05b4ad9feeed34f951bcfcf6dbfc5353c72ef1850cbf81263cd454
+FROM ghcr.io/dockhippie/php-apache:8.2-arm64@sha256:eba597c5a7d9c5b17c2f8054684914c7c427e74773b6e7625c9bc5d1f6f0e693
 
 VOLUME ["/var/lib/solder"]
 EXPOSE 8080
