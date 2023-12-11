@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/php-apache:8.2-arm64@sha256:c440afcf375b4d25bab78a494af8beb2b21a696126f230ea06e91b1435be2aff
+FROM ghcr.io/dockhippie/php-apache:8.3-arm64
 
 VOLUME ["/var/lib/solder"]
 EXPOSE 8080
@@ -8,7 +8,7 @@ CMD ["/usr/bin/container"]
 
 RUN apk update && \
   apk upgrade && \
-  apk add php8-bcmath@testing sqlite && \
+  apk add php${PHP_PACKAGE_VERSION}-bcmath@testing sqlite && \
   rm -rf /var/cache/apk/*
 
 ENV PHP_COMPOSER_INSTALL=false
