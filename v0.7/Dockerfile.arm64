@@ -17,7 +17,7 @@ ENV PHP_COMPOSER_INSTALL=false
 ENV SOLDER_VERSION=0.7.16
 
 # renovate: datasource=github-releases depName=aptible/supercronic
-ENV SUPERCRONIC_VERSION=0.2.31
+ENV SUPERCRONIC_VERSION=0.2.32
 
 RUN curl -sSLo - https://github.com/TechnicPack/TechnicSolder/archive/refs/tags/v${SOLDER_VERSION}.tar.gz | tar -xzf - --strip 1 -C /srv/www && \
   cd /srv/www && \
