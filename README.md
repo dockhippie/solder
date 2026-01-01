@@ -161,8 +161,9 @@ SOLDER_SESSION_SECURE_COOKIE =
 SOLDER_SESSION_STORE =
 SOLDER_SKIP_CHOWN = false
 SOLDER_STORAGE_PATH = /var/lib/solder
-SOLDER_STORAGE_PATH = /var/lib/solder
 ```
+
+Extracted by the command: `grep -hE ': "\$\{(.*)\}"' latest/overlay/etc/entrypoint.d/*.sh | sed 's/: "\${//' | sed 's/:="/ = /' | sed 's/"}"$//' | sort | uniq`
 
 ### sqlite
 
