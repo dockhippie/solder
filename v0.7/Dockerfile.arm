@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/php-apache:8.4-arm@sha256:fe324a9b9f46bc26ec4e22a1bfb7124a8f98dcbe4936a27e42e1cd14af5fd37b
+FROM ghcr.io/dockhippie/php-apache:8.4-arm
 
 VOLUME ["/var/lib/solder"]
 EXPOSE 8080
@@ -7,7 +7,6 @@ WORKDIR /srv/www
 CMD ["/usr/bin/container"]
 
 RUN apk update && \
-  apk upgrade && \
   apk add php${PHP_PACKAGE_VERSION}-bcmath@testing sqlite && \
   rm -rf /var/cache/apk/*
 
@@ -17,7 +16,7 @@ ENV PHP_COMPOSER_INSTALL=false
 ENV SOLDER_VERSION=0.7.16
 
 # renovate: datasource=github-releases depName=aptible/supercronic
-ENV SUPERCRONIC_VERSION=0.2.45
+ENV SUPERCRONIC_VERSION=0.2.46
 
 RUN curl -sSLo - https://github.com/TechnicPack/TechnicSolder/archive/refs/tags/v${SOLDER_VERSION}.tar.gz | tar -xzf - --strip 1 -C /srv/www && \
   cd /srv/www && \
