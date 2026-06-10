@@ -22,7 +22,7 @@ RUN curl -sSLo - https://github.com/TechnicPack/TechnicSolder/archive/refs/tags/
   cd /srv/www && \
   rm -f /srv/www/.env* && \
   composer config --no-plugins allow-plugins.php-http/discovery true && \
-  composer install --no-dev --no-interaction && \
+  composer install --no-dev --no-interaction --no-security-blocking && \
   chown -R apache:apache /srv/www && \
   curl -sSLo /usr/bin/supercronic https://github.com/aptible/supercronic/releases/download/v${SUPERCRONIC_VERSION}/supercronic-linux-arm64 && \
   chmod +x /usr/bin/supercronic
